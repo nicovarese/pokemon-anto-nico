@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@700&display=swap');
+
+.contenedor{
+    height: 640px;
+    width: 320px;
+    padding: 24px 16px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    border: 12px white;
+    background-color: #E5E5E5;
+}
+
+.pokeball-icono{
+    width: 24px;
+    height: 24px;
+}
+
+
+
+h1{
+    height: 31.9999987064671px;
+    width: 235.99999046019485px;
+    left: 37.0379638671875px;
+    top: 178.10189819335938px;
+    font-family: "Poppins";
+    font-size: 24px;
+    font-style: normal;
+    line-height: 32px;
+    font-weight: 700;
+    color:#212121
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 8px;
+    gap: 16px;
+    width: 328px;
+    height: 32px;
+}
+
+input{
+    height: 23.999999029850326px;
+    width: 327.9999867412878px;
+    left: 53.0550537109375px;
+    top: 268.1948699951172px;
+    border-radius: 8px;
+    padding: 4px, 8px, 4px, 8px;
+    background: white;
+    border: 1px solid #E0E0E0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 4px 8px;
+    gap: 16px;
+    text-align: center;
+}

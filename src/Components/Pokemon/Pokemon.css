@@ -1,0 +1,14 @@
+.item{
+    display: flex;
+    height: 112px;
+    width: 104px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid red;
+
+}
+
+.foto-lista{
+    height: 72px;
+    width: 72px;
+}
