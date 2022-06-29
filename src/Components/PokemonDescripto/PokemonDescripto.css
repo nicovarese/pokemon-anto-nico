@@ -1,0 +1,77 @@
+.contenedor-pokemon {
+  width: 360px;
+  height: 640px;
+  background: #f57d31;
+  border-radius: 12px;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  border: 12px white;
+  align-items: center;
+}
+
+.pokeball {
+  height: 218px;
+  width: 247px;
+  position: absolute;
+  background-image: url("../../Materiales/Pokeball.png");
+  background-repeat: no-repeat;
+  background-position: 14px 9px;
+  opacity: 10%;
+  margin-left: 160px;
+  margin-bottom: 47px;
+}
+
+.material-icons {
+  color: white;
+  width: 17.5px;
+}
+
+.nombre-pokemon {
+  width: 221px;
+  height: 32px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: white;
+}
+
+.numero-pokemon {
+  width: 35px;
+  height: 32px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.header-pokemon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  width: 312px;
+  height: 32px;
+}
+
+.foto-pokemon {
+  width: 200px;
+  height: 200px;
+  left: 112.62px;
+  top: 239.83px;
+}
+
+.informacion-pokemon {
+  width: 352px;
+  height: 412px;
+  background: #ffffff;
+  border-radius: 8px;
+}

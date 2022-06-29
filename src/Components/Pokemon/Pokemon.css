@@ -1,14 +1,49 @@
 .item{
     display: flex;
+    flex-direction: column;
     height: 112px;
     width: 104px;
     background-color: white;
     border-radius: 8px;
     border: 1px solid red;
-
+    align-items: center;
 }
 
 .foto-lista{
     height: 72px;
     width: 72px;
+}
+
+.nombre{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 105px;
+    height: 24px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 6px;
+    font-family: Poppins;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+    background-color: green;
+}
+
+.numero{
+    margin-top: 3px;
+    width: 88px;
+    height: 12px;
+    font-family: Poppins;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: right;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none;
 }

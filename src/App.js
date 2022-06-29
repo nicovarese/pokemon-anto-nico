@@ -13,6 +13,7 @@ function App() {
         weight: "6,9kg",
         height: "0,7m",
         moves: "Chlorophyll Overgrow",
+        color: "#74cb48",
         descripcion:
           "There is a plant seed on its back right from the day this Pokemon is born. The seed slowly grows larger",
       },
@@ -34,6 +35,7 @@ function App() {
         weight: "60kg",
         height: "0,4m",
         moves: ["Sturdy", "Rock-Head"],
+        color: "#b789d0",
         descripcion:
           "It eats iron ore - and sometimes railroad tracks - to build up the steel armor that protects its body.",
       },
@@ -55,6 +57,7 @@ function App() {
         weight: "32kg",
         height: "1,1m",
         moves: ["Compound-Eyes", "Tinted-Lens"],
+        color: "#a78723",
         descripcion:
           "In battle, it flaps at great speed to release highly toxic dust into the air",
       },
@@ -76,6 +79,7 @@ function App() {
         weight: "8,5kg",
         height: "0,6m",
         moves: ["Mega-Punch", "Fire-Punch"],
+        color: "#f57d31",
         descripcion:
           "It has a preference for hot things. When it rains, steam is said to spaut from the tip of its tail",
       },
@@ -97,6 +101,7 @@ function App() {
         weight: "4kg",
         height: "0,3m",
         moves: ["Limber", "Imposter"],
+        color: "#aaa67f",
         descripcion:
           "It can reconstitute its entire cellular structure to change into what it sees, but it returns to normal when it relaxes",
       },
@@ -118,6 +123,7 @@ function App() {
         weight: "0,1kg",
         height: "1,3m",
         moves: ["Levitate"],
+        color: "#70559b",
         descripcion:
           "Born from gases, anyone would faint if engulfed by its gaseous body, wich contains poison.",
       },
@@ -139,6 +145,7 @@ function App() {
         weight: "4,0kg",
         height: "0,4m",
         moves: ["Synchronize"],
+        color: "#fb5584",
         descripcion:
           "When viewed through a microscope, this Pokemon's short, fine, delicate hair can be seen.",
       },
@@ -160,6 +167,7 @@ function App() {
         weight: "6,0kg",
         height: "0,4m",
         moves: ["Mega-Punch", "Pay-Day"],
+        color: "#f9cf30",
         descripcion:
           "Pikachu that can  generate powerful  electricity have cheek sacs that are extra soft and super stretchy.",
       },
@@ -181,6 +189,7 @@ function App() {
         weight: "9,0kg",
         height: "0,5m",
         moves: ["Torrent", "Rain-Dish"],
+        color: "#6493eb",
         descripcion:
           "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
       },
@@ -200,7 +209,7 @@ function App() {
         <Route path="/" element={<ListaPokemon lista={lista} />} />
         <Route
           path="/descripcion-pokemon"
-          element={<DescripcionPokemon lista={lista} />}
+          element={<DescripcionPokemon pokemon={lista[0]} />}
         />
       </Routes>
     </BrowserRouter>
