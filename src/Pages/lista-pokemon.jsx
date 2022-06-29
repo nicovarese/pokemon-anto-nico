@@ -16,13 +16,15 @@ function ListaPokemon({ lista }) {
     setListaPokemon(resultadoFiltrado);
   };
 
+  const ordenarListaPokemon = () => {};
+
   return (
     <>
       <div className="contenedor">
         <header>
           <img className="pokeball-icono" src={pokeball} alt="" />
           <h1>Pokédex</h1>
-          <div className="filtro">
+          <div className="filtro" onClick={ordenarListaPokemon}>
             <span>#</span>
             <img className="flechita" src={arrow} alt="" />
           </div>
@@ -33,8 +35,8 @@ function ListaPokemon({ lista }) {
           onChange={buscarPokemon}
         />
         <div className="contenedor-lista">
-          {listaPokemon.map((e) => (
-            <Pokemon e={e} key={e.numero} />
+          {listaPokemon.map((pokemon) => (
+            <Pokemon pokemon={pokemon} key={pokemon.numero} />
           ))}
         </div>
       </div>
