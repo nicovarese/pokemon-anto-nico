@@ -17,6 +17,48 @@ function PokemonDescripto({ pokemon }) {
             {pokemon.categoria[0]} {pokemon.categoria[1]}
           </h3>
           <h2 className="about">About</h2>
+          <div className="contendor-datos">
+            <div className="contenedor-weight">
+              <div className="img">
+                <img src="" alt="" />
+                <p>{pokemon.about.weight}</p>
+              </div>
+              <h5>Weight</h5>
+            </div>
+            <div className="contenedor-height">
+              <div className="img">
+                <img src="" alt="" />
+                <p>{pokemon.about.height}</p>
+              </div>
+              <h5>Height</h5>
+            </div>
+            <div className="contenedor-moves">
+              <div className="img">
+                <p>{pokemon.about.moves}</p>
+              </div>
+              <h5>Moves</h5>
+            </div>
+          </div>
+          <p>{pokemon.about.descripcion}</p>
+          <h2 className="base-stats">Base Stats</h2>
+          <div className="contenedor-valores">
+            <ul className="listado-stats">
+              <li>HP</li>
+              <li>ATK</li>
+              <li>DEF</li>
+              <li>SATK</li>
+              <li>SDEF</li>
+              <li>SPD</li>
+            </ul>
+            <ul className="listado-pokemon">
+              <li>{pokemon.basestats.hp}</li>
+              <li>{pokemon.basestats.atk}</li>
+              <li>{pokemon.basestats.def}</li>
+              <li>{pokemon.basestats.satk}</li>
+              <li>{pokemon.basestats.sdef}</li>
+              <li>{pokemon.basestats.spd}</li>
+            </ul>
+          </div>
         </div>
         <div className="pokeball"></div>
       </div>

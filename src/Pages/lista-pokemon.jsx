@@ -16,7 +16,25 @@ function ListaPokemon({ lista }) {
     setListaPokemon(resultadoFiltrado);
   };
 
-  const ordenarListaPokemon = () => {};
+  const [ordenarPorNumero, setOrdenarPorNumero] = useState(true);
+  const ordenarListaPokemon = () => {
+    setOrdenarPorNumero(!ordenarPorNumero);
+    if (ordenarPorNumero) {
+      let listaOrdenadaPorNumero = listaPokemon.sort((a, b) => {
+        if (a.numero < b.numero) {
+          return 1;
+        } else return 0;
+      });
+      setListaPokemon(listaOrdenadaPorNumero);
+    } else {
+      let listaOrdenadaAlfabeticamente = listaPokemon.sort((a, b) => {
+        if (a.nombre < b.nombre) {
+          return 1;
+        } else return 0;
+      });
+      setListaPokemon(listaOrdenadaAlfabeticamente);
+    }
+  };
 
   return (
     <>
