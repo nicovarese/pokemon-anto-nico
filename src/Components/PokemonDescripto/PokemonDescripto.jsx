@@ -43,7 +43,8 @@ function PokemonDescripto({ pokemon }) {
           </div>
           <p>{pokemon.about.descripcion}</p>
           <h2 className="base-stats">Base Stats</h2>
-          {/* <div className="contenedor-valores">
+          /*{" "}
+          <div className="contenedor-valores">
             <ul className="listado-stats">
               <li>HP</li>
               <li>ATK</li>
@@ -60,7 +61,16 @@ function PokemonDescripto({ pokemon }) {
               <li>{pokemon.basestats.sdef}</li>
               <li>{pokemon.basestats.spd}</li>
             </ul>
-          </div> */}
+            <div class="progress">
+              <div
+                class="progress-bar w-75"
+                role="progressbar"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
         </div>
         <div className="pokeball"></div>
       </div>
