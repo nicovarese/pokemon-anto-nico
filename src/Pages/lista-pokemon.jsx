@@ -18,22 +18,14 @@ function ListaPokemon({ lista }) {
 
   const [ordenarPorNumero, setOrdenarPorNumero] = useState(true);
   const ordenarListaPokemon = () => {
+    console.log(listaPokemon);
+    let listaOrdenadaPorNumero = [...listaPokemon].sort((a, b) =>
+      ordenarPorNumero
+        ? a.numero.localeCompare(b.numero)
+        : a.nombre.localeCompare(b.nombre)
+    );
+    setListaPokemon(listaOrdenadaPorNumero);
     setOrdenarPorNumero(!ordenarPorNumero);
-    if (ordenarPorNumero) {
-      let listaOrdenadaPorNumero = listaPokemon.sort((a, b) => {
-        if (a.numero < b.numero) {
-          return 1;
-        } else return 0;
-      });
-      setListaPokemon(listaOrdenadaPorNumero);
-    } else {
-      let listaOrdenadaAlfabeticamente = listaPokemon.sort((a, b) => {
-        if (a.nombre < b.nombre) {
-          return 1;
-        } else return 0;
-      });
-      setListaPokemon(listaOrdenadaAlfabeticamente);
-    }
   };
 
   return (
@@ -41,9 +33,9 @@ function ListaPokemon({ lista }) {
       <div className="contenedor">
         <header>
           <img className="pokeball-icono" src={pokeball} alt="" />
-          <h1>Pokédex</h1>
+          <h1 className="pokedex">Pokédex</h1>
           <div className="filtro" onClick={ordenarListaPokemon}>
-            <span>#</span>
+            <span>{!ordenarPorNumero ? "#" : "a/z"}</span>
             <img className="flechita" src={arrow} alt="" />
           </div>
         </header>

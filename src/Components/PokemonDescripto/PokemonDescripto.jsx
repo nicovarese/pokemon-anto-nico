@@ -43,7 +43,7 @@ function PokemonDescripto({ pokemon }) {
           </div>
           <p>{pokemon.about.descripcion}</p>
           <h2 className="base-stats">Base Stats</h2>
-          /*{" "}
+
           <div className="contenedor-valores">
             <ul className="listado-stats">
               <li>HP</li>
