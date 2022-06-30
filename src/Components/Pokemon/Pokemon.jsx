@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Pokemon({ pokemon }) {
   const imagen = require(`../../Materiales/${pokemon.nombre.toLowerCase()}.png`);
   return (
-    <Link className="link" to="/descripcion-pokemon">
+    <Link className="link" to={`/descripcion-pokemon/${pokemon.nombre}`}>
       <div
         id={pokemon.numero}
         className="item"

@@ -8,7 +8,8 @@ function App() {
     {
       nombre: "Bulbasaur",
       numero: "#001",
-      categoria: ["grass", "poison"],
+      categoria: ["Grass", "Poison"],
+      colorcategoria: ["#74cb48", "#a43e9e"],
       about: {
         weight: "6,9kg",
         height: "0,7m",
@@ -31,6 +32,7 @@ function App() {
       numero: "#304",
       imagen: "imagen",
       categoria: ["Steel", "Rock"],
+      colorcategoria: ["#b789d0", "#b69e31"],
       about: {
         weight: "60kg",
         height: "0,4m",
@@ -53,6 +55,7 @@ function App() {
       numero: "#012",
       imagen: "imagen",
       categoria: ["Bug", "Flying"],
+      colorcategoria: ["#a7b723", "#a891ec"],
       about: {
         weight: "32kg",
         height: "1,1m",
@@ -74,7 +77,8 @@ function App() {
       nombre: "Charmander",
       numero: "#004",
       imagen: "imagen",
-      categoria: ["fire"],
+      categoria: ["Fire"],
+      colorcategoria: ["#f57d31"],
       about: {
         weight: "8,5kg",
         height: "0,6m",
@@ -97,6 +101,7 @@ function App() {
       numero: "#132",
       imagen: "imagen",
       categoria: ["Normal"],
+      colorcategoria: ["#aaa67f"],
       about: {
         weight: "4kg",
         height: "0,3m",
@@ -119,6 +124,7 @@ function App() {
       numero: "#092",
       imagen: "imagen",
       categoria: ["Ghost", "Type"],
+      colorcategoria: ["#70559d", "#666666"],
       about: {
         weight: "0,1kg",
         height: "1,3m",
@@ -141,6 +147,7 @@ function App() {
       numero: "#152",
       imagen: "imagen",
       categoria: ["Psychic"],
+      colorcategoria: ["#fb5584"],
       about: {
         weight: "4,0kg",
         height: "0,4m",
@@ -163,6 +170,7 @@ function App() {
       numero: "#025",
       imagen: "imagen",
       categoria: ["Electric"],
+      colorcategoria: ["#f9cf30"],
       about: {
         weight: "6,0kg",
         height: "0,4m",
@@ -185,6 +193,7 @@ function App() {
       numero: "#007",
       imagen: "imagen",
       categoria: ["Water"],
+      colorcategoria: ["#6493eb"],
       about: {
         weight: "9,0kg",
         height: "0,5m",
@@ -208,8 +217,8 @@ function App() {
       <Routes>
         <Route path="/" element={<ListaPokemon lista={lista} />} />
         <Route
-          path="/descripcion-pokemon"
-          element={<DescripcionPokemon pokemon={lista[0]} />}
+          path="/descripcion-pokemon/:nombre"
+          element={<DescripcionPokemon lista={lista} />}
         />
       </Routes>
     </BrowserRouter>

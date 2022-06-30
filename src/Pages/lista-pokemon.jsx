@@ -18,7 +18,6 @@ function ListaPokemon({ lista }) {
 
   const [ordenarPorNumero, setOrdenarPorNumero] = useState(true);
   const ordenarListaPokemon = () => {
-    console.log(listaPokemon);
     let listaOrdenadaPorNumero = [...listaPokemon].sort((a, b) =>
       ordenarPorNumero
         ? a.numero.localeCompare(b.numero)
@@ -39,11 +38,7 @@ function ListaPokemon({ lista }) {
             <img className="flechita" src={arrow} alt="" />
           </div>
         </header>
-        <input
-          type="search"
-          placeholder="&#xf007;Buscar"
-          onChange={buscarPokemon}
-        />
+        <input type="search" placeholder="🔍Buscar" onChange={buscarPokemon} />
         <div className="contenedor-lista">
           {listaPokemon.map((pokemon) => (
             <Pokemon pokemon={pokemon} key={pokemon.numero} />
