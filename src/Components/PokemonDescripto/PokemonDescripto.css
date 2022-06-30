@@ -19,7 +19,7 @@
   background-image: url("../../Materiales/Pokeball.png");
   background-repeat: no-repeat;
   background-position: 14px 9px;
-  opacity: 0.1;
+  opacity: 0.15;
   margin-left: 160px;
   margin-bottom: 47px;
   z-index: 1;
@@ -255,6 +255,7 @@
 
 .p-moves {
   margin: 0px;
+  width: 100px;
 }
 
 .moves {
@@ -304,6 +305,7 @@
   text-align: center;
   color: #f57d31;
   padding-top: 25px;
+  margin-bottom: 0px;
 }
 
 .barra {
@@ -328,10 +330,33 @@
 
 .p-lista {
   margin: 0px;
-  border-right: #e0e0e0 0.5px solid;
-  padding-right: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
 }
 
 .p-lista-stats {
   margin: 0px;
+}
+
+.rayita {
+  height: 20px;
+  border-right: 0.5px solid #e0e0e0;
+}
+
+.contendor-lista-y-nombre {
+  display: flex;
+  align-items: flex-end;
+}
+
+li {
+  list-style: none;
+}
+
+.nombres {
+  padding: 0px 10px 0px 0px;
+  text-align: end;
+  margin-right: 10px;
+  border-right: 0.5px solid #e0e0e0;
 }

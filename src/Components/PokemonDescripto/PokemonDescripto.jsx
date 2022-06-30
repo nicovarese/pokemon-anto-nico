@@ -31,8 +31,15 @@ function PokemonDescripto({ lista }) {
   const posicionPokemon = lista.findIndex(
     (pokemon) => pokemon.nombre.toLowerCase() === nombre.toLowerCase()
   );
-  const siguientePokemonDeLista = lista[posicionPokemon + 1];
-  const anteriorPokemonDeLista = lista[posicionPokemon - 1];
+  let siguientePokemonDeLista = lista[posicionPokemon + 1];
+  let anteriorPokemonDeLista = lista[posicionPokemon - 1];
+
+  if (posicionPokemon === 0) {
+    anteriorPokemonDeLista = lista[posicionPokemon];
+  }
+  if (posicionPokemon === 8) {
+    siguientePokemonDeLista = lista[posicionPokemon];
+  }
 
   const imagen = require(`../../Materiales/${pokemon.nombre.toLowerCase()}.png`);
   return (
@@ -52,6 +59,7 @@ function PokemonDescripto({ lista }) {
           <Link
             className="otro-link"
             to={`/descripcion-pokemon/${anteriorPokemonDeLista.nombre}`}
+            style={{ visibility: posicionPokemon === 0 ? "hidden" : "visible" }}
           >
             <span id="flechita-izq" className="material-symbols-outlined">
               chevron_left
@@ -61,6 +69,7 @@ function PokemonDescripto({ lista }) {
           <Link
             className="otro-link"
             to={`/descripcion-pokemon/${siguientePokemonDeLista.nombre}`}
+            style={{ visibility: posicionPokemon === 8 ? "hidden" : "visible" }}
           >
             <span id="flechita-der" className="material-symbols-outlined">
               chevron_right
@@ -125,62 +134,80 @@ function PokemonDescripto({ lista }) {
             Base Stats
           </h2>
 
-          <ul className="lista-stats">
-            <li className="item-lista-stats">
-              <p className="p-lista">HP</p>
-              <p className="p-lista-stats">{pokemon.basestats.hp}</p>
-              <BorderLinearProgress
-                className="barra"
-                variant="determinate"
-                value={pokemon.basestats.hp}
-              />
-            </li>
-            <li className="item-lista-stats">
-              <p className="p-lista">ATK</p>
-              <p className="p-lista-stats">{pokemon.basestats.atk}</p>
-              <BorderLinearProgress
-                className="barra"
-                variant="determinate"
-                value={pokemon.basestats.atk}
-              />
-            </li>
-            <li className="item-lista-stats">
-              <p className="p-lista">DEF</p>
-              <p className="p-lista-stats">{pokemon.basestats.def}</p>
-              <BorderLinearProgress
-                className="barra"
-                variant="determinate"
-                value={pokemon.basestats.def}
-              />
-            </li>
-            <li className="item-lista-stats">
-              <p className="p-lista">SATK</p>
-              <p className="p-lista-stats">{pokemon.basestats.satk}</p>
-              <BorderLinearProgress
-                className="barra"
-                variant="determinate"
-                value={pokemon.basestats.satk}
-              />
-            </li>
-            <li className="item-lista-stats">
-              <p className="p-lista">SDEF</p>
-              <p className="p-lista-stats">{pokemon.basestats.sdef}</p>
-              <BorderLinearProgress
-                className="barra"
-                variant="determinate"
-                value={pokemon.basestats.sdef}
-              />
-            </li>
-            <li className="item-lista-stats">
-              <p className="p-lista">SPD</p>
-              <p className="p-lista-stats">{pokemon.basestats.spd}</p>
-              <BorderLinearProgress
-                className="barra"
-                variant="determinate"
-                value={pokemon.basestats.spd}
-              />
-            </li>
-          </ul>
+          <div className="contendor-lista-y-nombre">
+            <ul className="nombres">
+              <li>
+                <p className="p-lista" style={{ color: pokemon.about.color }}>
+                  HP
+                </p>
+                <p className="p-lista" style={{ color: pokemon.about.color }}>
+                  ATK
+                </p>
+                <p className="p-lista" style={{ color: pokemon.about.color }}>
+                  DEF
+                </p>
+                <p className="p-lista" style={{ color: pokemon.about.color }}>
+                  SATK
+                </p>
+                <p className="p-lista" style={{ color: pokemon.about.color }}>
+                  SDEF
+                </p>
+                <p className="p-lista" style={{ color: pokemon.about.color }}>
+                  SPD
+                </p>
+              </li>
+            </ul>
+            <ul className="lista-stats">
+              <li className="item-lista-stats">
+                <p className="p-lista-stats">{pokemon.basestats.hp}</p>
+                <BorderLinearProgress
+                  className="barra"
+                  variant="determinate"
+                  value={pokemon.basestats.hp}
+                />
+              </li>
+              <li className="item-lista-stats">
+                <p className="p-lista-stats">{pokemon.basestats.atk}</p>
+                <BorderLinearProgress
+                  className="barra"
+                  variant="determinate"
+                  value={pokemon.basestats.atk}
+                />
+              </li>
+              <li className="item-lista-stats">
+                <p className="p-lista-stats">{pokemon.basestats.def}</p>
+                <BorderLinearProgress
+                  className="barra"
+                  variant="determinate"
+                  value={pokemon.basestats.def}
+                />
+              </li>
+              <li className="item-lista-stats">
+                <p className="p-lista-stats">{pokemon.basestats.satk}</p>
+                <BorderLinearProgress
+                  className="barra"
+                  variant="determinate"
+                  value={pokemon.basestats.satk}
+                />
+              </li>
+              <li className="item-lista-stats">
+                <p className="p-lista-stats">{pokemon.basestats.sdef}</p>
+                <BorderLinearProgress
+                  className="barra"
+                  variant="determinate"
+                  value={pokemon.basestats.sdef}
+                />
+              </li>
+              <li className="item-lista-stats">
+                <p className="p-lista-stats">{pokemon.basestats.spd}</p>
+                <BorderLinearProgress
+                  className="barra"
+                  variant="determinate"
+                  value={pokemon.basestats.spd}
+                />
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="pokeball"></div>
       </div>

@@ -16,7 +16,7 @@ function ListaPokemon({ lista }) {
     setListaPokemon(resultadoFiltrado);
   };
 
-  const [ordenarPorNumero, setOrdenarPorNumero] = useState(true);
+  const [ordenarPorNumero, setOrdenarPorNumero] = useState(false);
   const ordenarListaPokemon = () => {
     let listaOrdenadaPorNumero = [...listaPokemon].sort((a, b) =>
       ordenarPorNumero
@@ -25,6 +25,7 @@ function ListaPokemon({ lista }) {
     );
     setListaPokemon(listaOrdenadaPorNumero);
     setOrdenarPorNumero(!ordenarPorNumero);
+    console.log(listaOrdenadaPorNumero);
   };
 
   return (
