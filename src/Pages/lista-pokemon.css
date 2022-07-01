@@ -8,7 +8,8 @@
   flex-direction: column;
   gap: 8px;
   position: absolute;
-  border: 12px white;
+  border-radius: 24px;
+  border: 12px solid white;
   background-color: #e5e5e5;
   align-items: center;
 }
