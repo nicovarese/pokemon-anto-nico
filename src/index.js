@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  ///Trasladamos todos los routes a app.js, entonces utilizamos app.js como componente
+  /// y lo importamos en la linea 4.
   <React.StrictMode>
     <App />
   </React.StrictMode>

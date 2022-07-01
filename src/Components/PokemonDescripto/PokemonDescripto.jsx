@@ -9,6 +9,7 @@ import LinearProgress, {
 import { styled } from "@mui/material/styles";
 
 function PokemonDescripto({ lista }) {
+  // codigo para la barrita (importada de MUI)
   const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
     borderRadius: 5,
@@ -24,16 +25,22 @@ function PokemonDescripto({ lista }) {
   }));
 
   console.log(lista);
+  // useParams para que asocie el URL al nombre del pokemon. (ver en app.js cuando usamos route descripcionpokemon)
   const { nombre } = useParams();
+  // usamos find para encontrar el nombre del pokemon seleccionado.
   const pokemon = lista.find(
     (pokemon) => pokemon.nombre.toLowerCase() === nombre.toLowerCase()
   );
+  // usamos findIndex para encontrar la posición del pokemon seleccionado.
   const posicionPokemon = lista.findIndex(
     (pokemon) => pokemon.nombre.toLowerCase() === nombre.toLowerCase()
   );
+
+  // declaramos estas variables para ir para atrás o para adelante con las flechitas.
   let siguientePokemonDeLista = lista[posicionPokemon + 1];
   let anteriorPokemonDeLista = lista[posicionPokemon - 1];
 
+  // usamos estas condicionales para que no se aplique la variable en el primer y último item
   if (posicionPokemon === 0) {
     anteriorPokemonDeLista = lista[posicionPokemon];
   }
@@ -41,6 +48,7 @@ function PokemonDescripto({ lista }) {
     siguientePokemonDeLista = lista[posicionPokemon];
   }
 
+  // linea 53 importamos imagenes de cada pokemon, de acuerdo al pokemon que necesitemos
   const imagen = require(`../../Materiales/${pokemon.nombre.toLowerCase()}.png`);
   return (
     <>
@@ -55,6 +63,7 @@ function PokemonDescripto({ lista }) {
           <h1 className="nombre-pokemon">{pokemon.nombre}</h1>
           <div className="numero-pokemon">{pokemon.numero}</div>
         </header>
+        {/*linea 71: hicimos que linkee al pokemon anterior al apretar flechita. linea 72: cuando llegaba al primer pokemon, que se esconda flechita*/}
         <div className="imagen-y-flecha">
           <Link
             className="otro-link"
@@ -66,6 +75,7 @@ function PokemonDescripto({ lista }) {
             </span>
           </Link>
           <img className="foto-pokemon" src={imagen} alt="" />
+          {/*linea 81: hicimos que linkee al siguiente pokemon al apretar flechita. linea 82: cuando llegaba al ultimo pokemon, que se esconda flechita*/}
           <Link
             className="otro-link"
             to={`/descripcion-pokemon/${siguientePokemonDeLista.nombre}`}

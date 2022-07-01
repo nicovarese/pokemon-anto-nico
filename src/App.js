@@ -213,6 +213,8 @@ function App() {
     },
   ];
   return (
+    ///Acá pusimos los routes, el path es la ruta que se verá en el URL,
+    ///y el elemento sería la página que trabajamos como componente, con su/sus props(propiedades correspondientes)
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<ListaPokemon lista={lista} />} />
