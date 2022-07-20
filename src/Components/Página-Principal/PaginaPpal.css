@@ -1,0 +1,15 @@
+button {
+  width: 20%;
+  margin-top: 2%;
+}
+
+.ppal {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin: 5px;
+}
