@@ -10,11 +10,11 @@ function PaginaPpal() {
 
   useEffect(() => {
     verify();
-  });
+  }, []);
 
   const verify = async () => {
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch("http://localhost:1234/login", {
         method: "POST",
         body: JSON.stringify({ name, password }),
         headers: { "Content-Type": "application/json" },
@@ -25,7 +25,7 @@ function PaginaPpal() {
       }
       const fetchResponse = await response.json();
       localStorage.token = fetchResponse.token;
-      navegar("/pokemon");
+      navegar("/");
       console.log(fetchResponse);
     } catch (error) {
       console.log("Error");

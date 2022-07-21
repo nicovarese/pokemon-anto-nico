@@ -4,6 +4,7 @@ import pokeball from "../Materiales/Pokeball.png";
 import "./lista-pokemon.css";
 import arrow from "../Materiales/Arrow.svg";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ListaPokemon() {
   ///////// mostrar lista de Pokemones
@@ -67,6 +68,9 @@ function ListaPokemon() {
         <header>
           <img className="pokeball-icono" src={pokeball} alt="" />
           <h1 className="pokedex">Pokédex</h1>
+          <Link to="/login">
+            <button>login</button>
+          </Link>
           <div className="filtro" onClick={ordenarListaPokemon}>
             <span>{!ordenarPorNumero ? "#" : "a/z"}</span>
             <img className="flechita" src={arrow} alt="" />
@@ -75,7 +79,11 @@ function ListaPokemon() {
         <input type="search" placeholder="🔍 Buscar" onChange={buscarPokemon} />
         <div className="contenedor-lista">
           {listaPokemon.map((pokemon) => (
-            <Pokemon pokemon={pokemon} key={pokemon.numero} />
+            <Pokemon
+              pokemon={pokemon}
+              key={pokemon.numero}
+              cargarPokemones={cargarPokemones}
+            />
           ))}
         </div>
       </div>
