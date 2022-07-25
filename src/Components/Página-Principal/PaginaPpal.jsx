@@ -25,7 +25,7 @@ function PaginaPpal() {
       }
       const fetchResponse = await response.json();
       localStorage.token = fetchResponse.token;
-      navegar("/");
+      navegar("/pokemon");
       console.log(fetchResponse);
     } catch (error) {
       console.log(error);

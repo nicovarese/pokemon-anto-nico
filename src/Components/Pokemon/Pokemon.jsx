@@ -8,7 +8,7 @@ function Pokemon({ pokemon, cargarPokemones }) {
   const borrarPokemon = async () => {
     try {
       const respuesta = await fetch(
-        `http://localhost:1234/eliminar/pokemon/${pokemon.numero}`,
+        `http://localhost:1234/eliminar/pokemon/${pokemon.id}`,
         { method: "DELETE", headers: { "auth-token": token } }
       );
       cargarPokemones();
@@ -23,13 +23,6 @@ function Pokemon({ pokemon, cargarPokemones }) {
   };
   const imagen = require(`../../Materiales/${pokemon.nombre.toLowerCase()}.png`);
   return (
-<<<<<<< HEAD
-    <Link className="link" to={`/descripcion-pokemon/${pokemon.id}`}>
-      <div
-        id={pokemon.id}
-        className="item"
-        style={{ borderColor: pokemon.about.color }}
-=======
     <>
       <div
         className="botonBorrar"
@@ -38,11 +31,10 @@ function Pokemon({ pokemon, cargarPokemones }) {
           color: "black",
           display: token ? "inline-block" : "none",
         }}
->>>>>>> 84ae27512423a10913a7af65d8359e572d41c96e
       >
         x
       </div>
-      <Link className="link" to={`/descripcion-pokemon/${pokemon.numero}`}>
+      <Link className="link" to={`/descripcion-pokemon/${pokemon.id}`}>
         <div
           id={pokemon.numero}
           className="item"
