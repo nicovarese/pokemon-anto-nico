@@ -14,7 +14,7 @@ function PaginaPpal() {
 
   const verify = async () => {
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch("http://localhost:1234/login", {
         method: "POST",
         body: JSON.stringify({ name, password }),
         headers: { "Content-Type": "application/json" },
@@ -28,7 +28,7 @@ function PaginaPpal() {
       navegar("/pokemon");
       console.log(fetchResponse);
     } catch (error) {
-      console.log("Error");
+      console.log(error);
     }
   };
 

@@ -65,7 +65,7 @@ function PokemonDescripto() {
           style={{ backgroundColor: pokemon.about.color }}
         >
           <header className="header-pokemon">
-            <Link className="link" to="/">
+            <Link className="link" to="/pokemon">
               <span className="material-icons">arrow_back</span>
             </Link>
             <h1 className="nombre-pokemon">{pokemon.nombre}</h1>

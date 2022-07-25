@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 function Pokemon({ pokemon }) {
   const imagen = require(`../../Materiales/${pokemon.nombre.toLowerCase()}.png`);
   return (
-    <Link className="link" to={`/descripcion-pokemon/${pokemon.numero}`}>
+    <Link className="link" to={`/descripcion-pokemon/${pokemon.id}`}>
       <div
-        id={pokemon.numero}
+        id={pokemon.id}
         className="item"
         style={{ borderColor: pokemon.about.color }}
       >
