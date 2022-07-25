@@ -10,8 +10,8 @@ function App() {
     ///y el elemento sería la página que trabajamos como componente, con su/sus props(propiedades correspondientes)
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PaginaPpal />} />
-        <Route path="/pokemon" element={<ListaPokemon />} />
+        <Route path="/login" element={<PaginaPpal />} />
+        <Route path="/" element={<ListaPokemon />} />
         <Route
           path="/descripcion-pokemon/:id"
           element={<DescripcionPokemon />}

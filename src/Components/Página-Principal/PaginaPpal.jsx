@@ -10,7 +10,7 @@ function PaginaPpal() {
 
   useEffect(() => {
     verify();
-  });
+  }, []);
 
   const verify = async () => {
     try {
@@ -25,7 +25,7 @@ function PaginaPpal() {
       }
       const fetchResponse = await response.json();
       localStorage.token = fetchResponse.token;
-      navegar("/pokemon");
+      navegar("/");
       console.log(fetchResponse);
     } catch (error) {
       console.log(error);
