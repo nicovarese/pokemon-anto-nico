@@ -14,6 +14,7 @@ function ListaPokemon() {
     cargarPokemones();
   }, []);
 
+  const token = localStorage.getItem("token");
   const cargarPokemones = async () => {
     const token = localStorage.getItem("token");
     try {
@@ -68,8 +69,23 @@ function ListaPokemon() {
         <header>
           <img className="pokeball-icono" src={pokeball} alt="" />
           <h1 className="pokedex">Pokédex</h1>
-          <Link to="/login">
-            <button>login</button>
+          <Link to="/">
+            <button style={{ display: token ? "none" : "flex" }}>Login</button>
+          </Link>
+          <Link to="/agregar-pokemon">
+            <button style={{ display: token ? "flex" : "none" }}>
+              Agregar Pokemon
+            </button>
+          </Link>
+          <Link to="/sign-up">
+            <button style={{ display: token ? "none" : "flex" }}>
+              Sign up
+            </button>
+          </Link>
+          <Link to="/">
+            <button style={{ display: token ? "flex" : "none" }}>
+              Log out
+            </button>
           </Link>
           <div className="filtro" onClick={ordenarListaPokemon}>
             <span>{!ordenarPorNumero ? "#" : "a/z"}</span>

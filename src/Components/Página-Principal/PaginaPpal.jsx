@@ -1,22 +1,18 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PaginaPpal.css";
 
 function PaginaPpal() {
   const navegar = useNavigate();
-  const [name, setNombre] = useState([]);
+  const [nombre, setNombre] = useState([]);
   const [password, setPassword] = useState([]);
-
-  useEffect(() => {
-    verify();
-  }, []);
 
   const verify = async () => {
     try {
       const response = await fetch("http://localhost:1234/login", {
         method: "POST",
-        body: JSON.stringify({ name, password }),
+        body: JSON.stringify({ nombre, password }),
         headers: { "Content-Type": "application/json" },
       });
 
