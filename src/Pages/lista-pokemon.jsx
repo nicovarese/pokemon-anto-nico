@@ -73,7 +73,10 @@ function ListaPokemon() {
             <button style={{ display: token ? "none" : "flex" }}>Login</button>
           </Link>
           <Link to="/agregar-pokemon">
-            <button style={{ display: token ? "flex" : "none" }}>
+            <button
+              className="botonLista"
+              style={{ display: token ? "flex" : "none" }}
+            >
               Agregar Pokemon
             </button>
           </Link>
@@ -83,7 +86,10 @@ function ListaPokemon() {
             </button>
           </Link>
           <Link to="/">
-            <button style={{ display: token ? "flex" : "none" }}>
+            <button
+              className="botonLista"
+              style={{ display: token ? "flex" : "none" }}
+            >
               Log out
             </button>
           </Link>
@@ -92,7 +98,12 @@ function ListaPokemon() {
             <img className="flechita" src={arrow} alt="" />
           </div>
         </header>
-        <input type="search" placeholder="🔍 Buscar" onChange={buscarPokemon} />
+        <input
+          className="inputBuscar"
+          type="search"
+          placeholder="🔍 Buscar"
+          onChange={buscarPokemon}
+        />
         <div className="contenedor-lista">
           {listaPokemon.map((pokemon) => (
             <Pokemon
