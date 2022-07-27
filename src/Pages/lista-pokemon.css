@@ -66,9 +66,12 @@ header {
 .contenedor-lista {
   padding: 8px 0px 0px;
   gap: 5px;
-  width: 370px;
+  width: 360px;
   height: 824px;
   display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 span {
@@ -85,15 +88,15 @@ span {
   display: block;
   height: 30px;
   width: 80px;
-  border-radius: 30px;
+  border-radius: 10px;
   text-transform: uppercase;
   background-color: transparent;
   text-align: center;
-  color: rgb(8, 26, 105);
+  color: rgb(0, 0, 0);
   font-size: 11px;
   overflow: hidden;
   transition: all 1000ms ease;
-  box-shadow: 5px 5px 15px rgb(202, 154, 128);
+  box-shadow: 1px 1px 3px rgb(202, 154, 128);
   margin-top: 30%;
   z-index: 0;
   font-weight: 300;
@@ -101,4 +104,35 @@ span {
   border: #e2572031 solid 0.5px;
   margin-bottom: 5%;
   text-decoration: none;
+  padding-top: 7px;
+  padding-left: 14px;
+}
+
+.itemAgregar {
+  display: flex;
+  flex-direction: column;
+  height: 112px;
+  width: 104px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid gray;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.nombreAgregar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 105px;
+  height: 24px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 6px;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  background-color: gray;
 }

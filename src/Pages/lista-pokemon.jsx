@@ -5,6 +5,8 @@ import "./lista-pokemon.css";
 import arrow from "../Materiales/Arrow.svg";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { grey } from "@mui/material/colors";
+import imgAgregar from "../Materiales/Pokeball.png";
 
 function ListaPokemon() {
   ///////// mostrar lista de Pokemones
@@ -73,12 +75,12 @@ function ListaPokemon() {
             <button style={{ display: token ? "none" : "flex" }}>Login</button>
           </Link>
           <Link to="/agregar-pokemon">
-            <button
+            {/* <button
               className="botonLista"
               style={{ display: token ? "flex" : "none" }}
             >
               Agregar Pokemon
-            </button>
+            </button> */}
           </Link>
           <Link to="/sign-up">
             <button style={{ display: token ? "none" : "flex" }}>
@@ -105,6 +107,15 @@ function ListaPokemon() {
           onChange={buscarPokemon}
         />
         <div className="contenedor-lista">
+          <Link className="link" to="/agregar-pokemon">
+            <div className="itemAgregar" style={{ borderColor: grey }}>
+              <div className="numero" style={{ color: grey }}></div>
+              <img className="foto-lista" src={imgAgregar} alt="" />
+              <div className="nombreAgregar" style={{ backgroundColor: grey }}>
+                [Agregar Pokemon]
+              </div>
+            </div>
+          </Link>
           {listaPokemon.map((pokemon) => (
             <Pokemon
               pokemon={pokemon}

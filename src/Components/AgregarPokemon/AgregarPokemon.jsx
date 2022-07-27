@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./AgregarPokemon.css";
+
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [nombre, setNombre] = useState("");
@@ -140,15 +143,18 @@ function SignUp() {
   };
 
   return (
-    <div className="ppal">
-      <h1>Sign-Up</h1>
+    <div className="formularioAgregarPokemon">
+      {/* <h1 className="tituloAgregarPokemon">Agregar Pokemon</h1> */}
+      <Link className="link" to="/pokemon">
+        <span className="material-icons arrowBack">arrow_back</span>
+      </Link>
       <label htmlFor="user">
         Ingrese nombre del pókemon:
         <input
           onChange={ingresoNombre}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar nombre"
         />
       </label>
       <label htmlFor="user">
@@ -157,7 +163,7 @@ function SignUp() {
           onChange={ingresoNumero}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar número"
         />
       </label>
       <label htmlFor="user">
@@ -166,7 +172,7 @@ function SignUp() {
           onChange={ingresoImagen}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar imagen"
         />
       </label>
       <label htmlFor="user">
@@ -175,7 +181,7 @@ function SignUp() {
           onChange={ingresoCategoria1}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar categoría"
         />
       </label>
       <label htmlFor="user">
@@ -184,7 +190,7 @@ function SignUp() {
           onChange={ingresoCategoria2}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar categoría"
         />
       </label>
       <label htmlFor="user">
@@ -193,7 +199,7 @@ function SignUp() {
           onChange={ingresoColorCategoria1}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar color"
         />
       </label>
       <label htmlFor="user">
@@ -202,7 +208,7 @@ function SignUp() {
           onChange={ingresoColorCategoria2}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar color"
         />
       </label>
       <label htmlFor="user">
@@ -211,7 +217,7 @@ function SignUp() {
           onChange={ingresoWeight}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar peso"
         />
       </label>
       <label htmlFor="user">
@@ -220,7 +226,7 @@ function SignUp() {
           onChange={ingresoHeight}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar altura"
         />
       </label>
       <label htmlFor="user">
@@ -229,7 +235,7 @@ function SignUp() {
           onChange={ingresoMoves1}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar movimiento"
         />
       </label>
       <label htmlFor="user">
@@ -238,7 +244,7 @@ function SignUp() {
           onChange={ingresoMoves2}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar movimiento"
         />
       </label>
       <label htmlFor="user">
@@ -247,7 +253,7 @@ function SignUp() {
           onChange={ingresoColor}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar color Pokemon"
         />
       </label>
       <label htmlFor="user">
@@ -256,7 +262,7 @@ function SignUp() {
           onChange={ingresoDescripcion}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar descripción"
         />
       </label>
       <label htmlFor="user">
@@ -265,7 +271,7 @@ function SignUp() {
           onChange={ingresoHp}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar HP"
         />
       </label>
       <label htmlFor="user">
@@ -274,7 +280,7 @@ function SignUp() {
           onChange={ingresoAtk}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar ATK"
         />
       </label>
       <label htmlFor="user">
@@ -283,7 +289,7 @@ function SignUp() {
           onChange={ingresoDef}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar DEF"
         />
       </label>
       <label htmlFor="user">
@@ -292,7 +298,7 @@ function SignUp() {
           onChange={ingresoSatk}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar SATK"
         />
       </label>
       <label htmlFor="user">
@@ -301,7 +307,7 @@ function SignUp() {
           onChange={ingresoSdef}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar SDEF"
         />
       </label>
       <label htmlFor="user">
@@ -310,10 +316,12 @@ function SignUp() {
           onChange={ingresoSpd}
           type="text"
           name="user"
-          placeholder="Ingresar usuario"
+          placeholder="Ingresar SPD"
         />
       </label>
-      <button onClick={agregarPokemonNuevo}>Registrarse</button>
+      <button className="botonAgregar" onClick={agregarPokemonNuevo}>
+        Agregar
+      </button>
     </div>
   );
 }

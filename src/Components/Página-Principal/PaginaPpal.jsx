@@ -63,7 +63,7 @@ function PaginaPpal() {
       <button className="btn btn1" onClick={verify}>
         Ingresar
       </button>
-      <Link className="link" to="/pokemon">
+      <Link className="linkLista" to="/pokemon">
         » Vista previa «
       </Link>
     </div>

@@ -7,6 +7,7 @@
   border-radius: 8px;
   border: 1px solid red;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .foto-lista {
@@ -50,4 +51,5 @@
 
 .botonBorrar {
   width: 5px;
+  height: 5px;
 }
