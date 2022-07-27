@@ -1,15 +1,101 @@
-button {
-  width: 20%;
-  margin-top: 2%;
+.btn1 {
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 180px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background-color: white;
+  color: rgb(8, 26, 105);
+  font-size: 12px;
+  overflow: hidden;
+  transition: all 1000ms ease;
+  box-shadow: 10px 5px 15px rgb(202, 154, 128);
+  margin-top: 10%;
+  z-index: 0;
+  font-weight: 700;
+  cursor: pointer;
+  border: #e25720 solid 0.5px;
+  margin-bottom: 5%;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background-color: #e25720;
+  transition: all 500ms ease;
+  z-index: -1;
+}
+
+.btn1::before {
+  width: 0;
+  height: 100%;
+}
+
+.btn1:hover {
+  color: #ffffff;
+}
+
+.btn1:hover::before {
+  width: 100%;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(226, 142, 32, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 8px 16px rgba(32, 226, 215, 0);
+  }
 }
 
 .ppal {
   display: flex;
-
   flex-direction: column;
   align-items: center;
+  background-image: url("../../Materiales/ImagenLogin.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 390px;
+  height: 844px;
 }
 
-input {
+.inputLogin {
   margin: 5px;
+  height: 23.999999029850326px;
+  width: 327.9999867412878px;
+  left: 53.0550537109375px;
+  top: 268.1948699951172px;
+  border-radius: 8px;
+  padding: 4px, 8px, 4px, 8px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px 8px;
+  gap: 16px;
+  text-align: center;
+  background-color: #ffffff48;
+}
+
+.label1,
+.label2 {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow: 1px 1px 2px black;
+  margin-bottom: 3%;
+}
+
+.label1 {
+  margin-top: 85%;
+}
+
+.link {
+  margin-top: 2%;
+  color: #140d55ce;
+  cursor: pointer;
 }

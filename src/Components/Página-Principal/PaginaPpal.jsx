@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PaginaPpal.css";
+import { Link } from "react-router-dom";
 
 function PaginaPpal() {
   const navegar = useNavigate();
@@ -38,10 +39,10 @@ function PaginaPpal() {
 
   return (
     <div className="ppal">
-      <h1>Bienvenidos!</h1>
-      <label htmlFor="user">
+      <label className="label1" htmlFor="user">
         Usuario:
         <input
+          className="inputLogin"
           type="text"
           name="user"
           //   value={usuario}
@@ -49,16 +50,22 @@ function PaginaPpal() {
           onChange={ingresoNombre}
         />
       </label>
-      <label htmlFor="psw">
+      <label className="label2" htmlFor="psw">
         Contraseña:
         <input
+          className="inputLogin"
           type="password"
           name="psw"
           placeholder="Ingresar contraseña"
           onChange={ingresoPassword}
         />
       </label>
-      <button onClick={verify}>Ingresar</button>
+      <button className="btn btn1" onClick={verify}>
+        Ingresar
+      </button>
+      <Link className="link" to="/pokemon">
+        » Vista previa «
+      </Link>
     </div>
   );
 }
