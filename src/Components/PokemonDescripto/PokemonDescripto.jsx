@@ -53,9 +53,7 @@ function PokemonDescripto() {
   }));
 
   // linea 53 importamos imagenes de cada pokemon, de acuerdo al pokemon que necesitemos
-  const imagen =
-    pokemon.nombre &&
-    require(`../../Materiales/${pokemon.nombre.toLowerCase()}.png`);
+  const imagen = pokemon.imagen;
 
   return (
     pokemon.nombre && (

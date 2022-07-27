@@ -21,7 +21,7 @@ function Pokemon({ pokemon, cargarPokemones }) {
       console.log("No se pudo conectar con el back end");
     }
   };
-  const imagen = require(`../../Materiales/${pokemon.nombre.toLowerCase()}.png`);
+  const imagen = pokemon.imagen;
   return (
     <>
       <div
