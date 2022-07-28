@@ -54,7 +54,7 @@ function ListaPokemon() {
   const ordenarListaPokemon = () => {
     let listaOrdenadaPorNumero = [...listaPokemon].sort((a, b) =>
       ordenarPorNumero
-        ? a.numero.localeCompare(b.numero)
+        ? a.numero.toString().localeCompare(b.numero.toString())
         : a.nombre.localeCompare(b.nombre)
     );
     setListaPokemon(listaOrdenadaPorNumero);
