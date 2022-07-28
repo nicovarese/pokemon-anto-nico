@@ -113,11 +113,17 @@ span {
   flex-direction: column;
   height: 112px;
   width: 104px;
-  background-color: white;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0.5) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 0.5) 100%
+  );
   border-radius: 8px;
-  border: 1px solid gray;
+  border: 1px solid rgba(175, 15, 15, 0.24);
   align-items: center;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .nombreAgregar {
@@ -134,5 +140,68 @@ span {
   letter-spacing: 0em;
   text-align: center;
   color: white;
-  background-color: gray;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0.5) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 0.5) 100%
+  );
+}
+
+.fotoListaAgregar {
+  height: 72px;
+  width: 72px;
+  filter: invert();
+  opacity: 0.4;
+  margin-bottom: 5px;
+}
+
+.itemIniciarSesion {
+  display: flex;
+  flex-direction: column;
+  height: 112px;
+  width: 104px;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0.5) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 0.5) 100%
+  );
+  border-radius: 8px;
+  border: 1px solid rgba(175, 15, 15, 0.24);
+  align-items: center;
+  margin-left: 5px;
+}
+
+.nombreIniciarSesion {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 105px;
+  height: 24px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 6px;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0.5) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 0.5) 100%
+  );
+}
+
+.fotoListaIniciarSesion {
+  height: 72px;
+  width: 72px;
+  filter: invert();
+  opacity: 0.4;
+  margin-bottom: 5px;
 }

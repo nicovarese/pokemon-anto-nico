@@ -29,7 +29,7 @@ function Pokemon({ pokemon, cargarPokemones }) {
         onClick={borrarPokemon}
         style={{
           color: "black",
-          display: token ? "inline-block" : "none",
+          visibility: token ? "visible" : "hidden",
         }}
       >
         x
