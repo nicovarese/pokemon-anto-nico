@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { grey } from "@mui/material/colors";
 import imgAgregar from "../Materiales/Pokeball.png";
+import imgIniciarSesion from "../Materiales/usuario.png";
 
 function ListaPokemon() {
   ///////// mostrar lista de Pokemones
@@ -75,11 +76,7 @@ function ListaPokemon() {
             <button style={{ display: token ? "none" : "flex" }}>Login</button>
           </Link> */}
           <Link to="/agregar-pokemon"></Link>
-          <Link to="/sign-up">
-            <button style={{ display: token ? "none" : "flex" }}>
-              Sign up
-            </button>
-          </Link>
+
           <Link to="/">
             <button
               className="botonLista"
@@ -118,7 +115,11 @@ function ListaPokemon() {
               style={{ display: token ? "none" : "flex" }}
             >
               <div className="numero"></div>
-              <img className="fotoListaIniciarSesion" src={imgAgregar} alt="" />
+              <img
+                className="fotoListaIniciarSesion"
+                src={imgIniciarSesion}
+                alt=""
+              />
               <div className="nombreIniciarSesion">[Iniciar sesión]</div>
             </div>
           </Link>

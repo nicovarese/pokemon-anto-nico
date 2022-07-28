@@ -36,9 +36,17 @@ function PaginaPpal() {
   const ingresoPassword = (ev) => {
     setPassword(ev.target.value);
   };
+  const token = localStorage.getItem("token");
 
   return (
     <div className="ppal">
+      <Link
+        style={{ textDecoration: "inherit" }}
+        className="linkLista"
+        to="/pokemon"
+      >
+        » Vista previa «
+      </Link>
       <label className="label1" htmlFor="user">
         Usuario:
         <input
@@ -63,8 +71,18 @@ function PaginaPpal() {
       <button className="btn btn1" onClick={verify}>
         Ingresar
       </button>
-      <Link className="linkLista" to="/pokemon">
-        » Vista previa «
+
+      <p style={{ display: token ? "none" : "block" }} className="pRegistro">
+        No tienes usuario?
+      </p>
+
+      <Link to="/sign-up" style={{ textDecoration: "inherit" }}>
+        <button
+          className="botonRegistrarseLogin"
+          style={{ display: token ? "none" : "block" }}
+        >
+          Regístrate
+        </button>
       </Link>
     </div>
   );

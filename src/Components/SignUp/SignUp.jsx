@@ -40,7 +40,7 @@ function SignUp() {
 
   return (
     <div className="registro">
-      <Link className="link" to="/pokemon">
+      <Link className="link" to="/">
         <span className="material-icons arrowBackSignUp">arrow_back</span>
       </Link>
       <h1 className="signUp">Sign-Up</h1>

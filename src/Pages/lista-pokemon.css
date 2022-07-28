@@ -11,6 +11,10 @@
   border: 10px solid white;
   background-color: #e5e5e5;
   align-items: center;
+  background-image: url("../Materiales/fondo-lista-mosaico.png");
+  background-size: 110%;
+  /* background-repeat: no-repeat;
+  background-position: 10px 10px; */
 }
 
 .pokeball-icono {
@@ -46,8 +50,8 @@ header {
 }
 
 .inputBuscar {
-  height: 23.999999029850326px;
-  width: 327.9999867412878px;
+  height: 26px;
+  width: 340px;
   left: 53.0550537109375px;
   top: 268.1948699951172px;
   border-radius: 8px;
@@ -61,6 +65,7 @@ header {
   gap: 16px;
   text-align: center;
   margin-top: 7%;
+  font-size: 13px;
 }
 
 .contenedor-lista {
@@ -121,7 +126,7 @@ span {
     rgba(252, 176, 69, 0.5) 100%
   );
   border-radius: 8px;
-  border: 1px solid rgba(175, 15, 15, 0.24);
+  border: 2px solid rgb(255, 255, 255);
   align-items: center;
   margin-left: 5px;
 }
@@ -129,7 +134,7 @@ span {
 .nombreAgregar {
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 105px;
+  width: 104px;
   height: 24px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 6px;
@@ -170,7 +175,7 @@ span {
     rgba(252, 176, 69, 0.5) 100%
   );
   border-radius: 8px;
-  border: 1px solid rgba(175, 15, 15, 0.24);
+  border: 2px solid rgb(255, 255, 255);
   align-items: center;
   margin-left: 5px;
 }
@@ -178,7 +183,7 @@ span {
 .nombreIniciarSesion {
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 105px;
+  width: 104px;
   height: 24px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 6px;
@@ -201,7 +206,5 @@ span {
 .fotoListaIniciarSesion {
   height: 72px;
   width: 72px;
-  filter: invert();
-  opacity: 0.4;
-  margin-bottom: 5px;
+  opacity: 0.6;
 }
