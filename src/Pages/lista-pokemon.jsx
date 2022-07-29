@@ -17,6 +17,11 @@ function ListaPokemon() {
   }, []);
 
   const token = localStorage.getItem("token");
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+  };
+
   const cargarPokemones = async () => {
     const token = localStorage.getItem("token");
     try {
@@ -89,6 +94,7 @@ function ListaPokemon() {
           </Link>
           <Link to="/">
             <button
+              onClick={logOut}
               className="botonLista"
               style={{ display: token ? "flex" : "none" }}
             >
@@ -108,7 +114,10 @@ function ListaPokemon() {
         />
         <div className="contenedor-lista">
           <Link className="link" to="/agregar-pokemon">
-            <div className="itemAgregar" style={{ borderColor: grey }}>
+            <div
+              className="itemAgregar"
+              style={{ display: token ? "flex" : "none" }}
+            >
               <div className="numero" style={{ color: grey }}></div>
               <img className="foto-lista" src={imgAgregar} alt="" />
               <div className="nombreAgregar" style={{ backgroundColor: grey }}>
