@@ -1,9 +1,10 @@
 .contenedor-pokemon {
-  width: 360px;
-  height: 640px;
+  width: 370px;
+  height: 824px;
+
   background: #f57d31;
   border-radius: 24px;
-  border: 12px solid white;
+  border: 10px solid white;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -28,6 +29,8 @@
 .material-icons {
   color: white;
   width: 17.5px;
+  margin-top: 5px;
+  z-index: 3;
 }
 
 .nombre-pokemon {
@@ -58,9 +61,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding-top: 24px;
   gap: 16px;
-  width: 312px;
+  width: 350px;
   height: 32px;
 }
 
@@ -71,27 +75,49 @@
   justify-content: space-around;
   align-items: center;
   position: absolute;
-  margin-top: 87px;
+  margin-top: 120px;
   z-index: 3;
 }
 .material-symbols-outlined {
   color: white;
-  margin-top: 66px;
-  padding-top: 30px;
+  font-size: 40px;
+  margin-top: 220px;
 }
 
+/* #flechita-der {
+  margin-right: 20px;
+}
+
+#flechita-izq {
+  margin-left: 20px;
+} */
+
 .foto-pokemon {
-  width: 200px;
-  height: 200px;
+  width: 275px;
+  height: 275px;
   left: 112.62px;
   top: 239.83px;
   z-index: 3;
+  margin-top: 110px;
+  animation: movimiento 2.5s linear infinite;
+}
+
+@keyframes movimiento {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .informacion-pokemon {
-  margin-top: 200px;
+  margin-top: 300px;
   width: 352px;
-  height: 412px;
+  height: 450px;
   background: #ffffff;
   border-radius: 8px;
   margin-bottom: 5px;
@@ -360,4 +386,8 @@ li {
   text-align: end;
   margin-right: 10px;
   border-right: 0.5px solid #e0e0e0;
+}
+
+.contenedor-flecha {
+  width: 40px;
 }

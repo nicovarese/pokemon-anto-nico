@@ -28,11 +28,11 @@ function Pokemon({ pokemon, cargarPokemones }) {
         className="botonBorrar"
         onClick={borrarPokemon}
         style={{
-          color: "black",
+          color: pokemon.about.color,
           visibility: token ? "visible" : "hidden",
         }}
       >
-        x
+        ✘
       </div>
       <Link className="link" to={`/descripcion-pokemon/${pokemon.id}`}>
         <div
