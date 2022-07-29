@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { grey } from "@mui/material/colors";
 import imgAgregar from "../Materiales/Pokeball.png";
+import imgIniciarSesion from "../Materiales/usuario.png";
 
 function ListaPokemon() {
   ///////// mostrar lista de Pokemones
@@ -76,22 +77,11 @@ function ListaPokemon() {
         <header>
           <img className="pokeball-icono" src={pokeball} alt="" />
           <h1 className="pokedex">Pokédex</h1>
-          <Link to="/">
+          {/* <Link to="/">
             <button style={{ display: token ? "none" : "flex" }}>Login</button>
-          </Link>
-          <Link to="/agregar-pokemon">
-            {/* <button
-              className="botonLista"
-              style={{ display: token ? "flex" : "none" }}
-            >
-              Agregar Pokemon
-            </button> */}
-          </Link>
-          <Link to="/sign-up">
-            <button style={{ display: token ? "none" : "flex" }}>
-              Sign up
-            </button>
-          </Link>
+          </Link> */}
+          <Link to="/agregar-pokemon"></Link>
+
           <Link to="/">
             <button
               onClick={logOut}
@@ -119,10 +109,24 @@ function ListaPokemon() {
               style={{ display: token ? "flex" : "none" }}
             >
               <div className="numero" style={{ color: grey }}></div>
-              <img className="foto-lista" src={imgAgregar} alt="" />
+              <img className="fotoListaAgregar" src={imgAgregar} alt="" />
               <div className="nombreAgregar" style={{ backgroundColor: grey }}>
                 [Agregar Pokemon]
               </div>
+            </div>
+          </Link>
+          <Link className="link" to="/">
+            <div
+              className="itemIniciarSesion"
+              style={{ display: token ? "none" : "flex" }}
+            >
+              <div className="numero"></div>
+              <img
+                className="fotoListaIniciarSesion"
+                src={imgIniciarSesion}
+                alt=""
+              />
+              <div className="nombreIniciarSesion">[Iniciar sesión]</div>
             </div>
           </Link>
           {listaPokemon.map((pokemon) => (

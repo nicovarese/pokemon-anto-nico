@@ -2,21 +2,20 @@
   position: relative;
   display: block;
   height: 30px;
-  width: 180px;
-  border-radius: 4px;
+  width: 160px;
+  border-radius: 20px;
   text-transform: uppercase;
   background-color: white;
   color: rgb(8, 26, 105);
   font-size: 12px;
   overflow: hidden;
   transition: all 1000ms ease;
-  box-shadow: 10px 5px 15px rgb(202, 154, 128);
-  margin-top: 10%;
+  box-shadow: 5px 5px 15px rgb(202, 154, 128);
+  margin-top: 10px;
   z-index: 0;
   font-weight: 700;
   cursor: pointer;
   border: #e25720 solid 0.5px;
-  margin-bottom: 5%;
 }
 
 .btn::before {
@@ -85,17 +84,76 @@
 .label1,
 .label2 {
   color: rgb(255, 255, 255);
-  font-size: 20px;
+  font-size: 15px;
   text-shadow: 1px 1px 2px black;
   margin-bottom: 3%;
 }
 
 .label1 {
-  margin-top: 85%;
+  margin-top: 40px;
 }
 
 .linkLista {
+<<<<<<< HEAD
   margin-top: 2%;
   color: white;
+=======
+  margin-top: 270px;
+  color: #ffffffce;
+>>>>>>> cf3428326302e87df6d154078ffb1d0aa2e7ea1e
   cursor: pointer;
+}
+
+.botonRegistrarseLogin {
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 150px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.014);
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  overflow: hidden;
+  transition: all 1000ms ease;
+  margin-top: 1px;
+  z-index: 0;
+  font-weight: 700;
+  cursor: pointer;
+  border: transparent;
+  margin-bottom: 8px;
+  text-decoration: inherit;
+}
+
+.botonRegistrarseLogin::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background-color: #eeb808;
+  transition: all 500ms ease;
+  z-index: -1;
+}
+
+.botonRegistrarseLogin::before {
+  width: 0;
+  height: 100%;
+}
+
+.botonRegistrarseLogin:hover {
+  color: #ffffff;
+}
+
+.botonRegistrarseLogin:hover::before {
+  width: 100%;
+}
+
+.pRegistro {
+  color: #ffffff;
+  font-size: 11px;
+  margin-bottom: 0;
+  margin-top: 30px;
+  text-align: center;
 }
