@@ -71,29 +71,34 @@ function PokemonDescripto() {
             <div className="numero-pokemon">{pokemon.numero}</div>
           </header>
           {/*linea 71: hicimos que linkee al pokemon anterior al apretar flechita. linea 72: cuando llegaba al primer pokemon, que se esconda flechita*/}
+
           <div className="imagen-y-flecha">
-            {pokemon.prev && (
-              <Link
-                className="otro-link"
-                to={`/descripcion-pokemon/${pokemon.prev}`}
-              >
-                <span id="flechita-izq" className="material-symbols-outlined">
-                  chevron_left
-                </span>
-              </Link>
-            )}
+            <div className="contenedor-flecha">
+              {pokemon.prev && (
+                <Link
+                  className="otro-link"
+                  to={`/descripcion-pokemon/${pokemon.prev}`}
+                >
+                  <span id="flechita-izq" className="material-symbols-outlined">
+                    chevron_left
+                  </span>
+                </Link>
+              )}
+            </div>
             <img className="foto-pokemon" src={imagen} alt="" />
             {/*linea 81: hicimos que linkee al siguiente pokemon al apretar flechita. linea 82: cuando llegaba al ultimo pokemon, que se esconda flechita*/}
-            {pokemon.next && (
-              <Link
-                className="otro-link"
-                to={`/descripcion-pokemon/${pokemon.next}`}
-              >
-                <span id="flechita-der" className="material-symbols-outlined">
-                  chevron_right
-                </span>
-              </Link>
-            )}
+            <div className="contenedor-flecha">
+              {pokemon.next && (
+                <Link
+                  className="otro-link"
+                  to={`/descripcion-pokemon/${pokemon.next}`}
+                >
+                  <span id="flechita-der" className="material-symbols-outlined">
+                    chevron_right
+                  </span>
+                </Link>
+              )}
+            </div>
           </div>
           <div className="informacion-pokemon">
             <div className="categorias">

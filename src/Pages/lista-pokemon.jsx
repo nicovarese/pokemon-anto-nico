@@ -77,9 +77,6 @@ function ListaPokemon() {
         <header>
           <img className="pokeball-icono" src={pokeball} alt="" />
           <h1 className="pokedex">Pokédex</h1>
-          {/* <Link to="/">
-            <button style={{ display: token ? "none" : "flex" }}>Login</button>
-          </Link> */}
           <Link to="/agregar-pokemon"></Link>
 
           <Link to="/">
@@ -88,11 +85,11 @@ function ListaPokemon() {
               className="botonLista"
               style={{ display: token ? "flex" : "none" }}
             >
-              Log out
+              📴
             </button>
           </Link>
           <div className="filtro" onClick={ordenarListaPokemon}>
-            <span>{!ordenarPorNumero ? "#" : "a/z"}</span>
+            <span>{!ordenarPorNumero ? "🔢" : "🔠"}</span>
             <img className="flechita" src={arrow} alt="" />
           </div>
         </header>
