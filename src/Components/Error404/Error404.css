@@ -2,6 +2,10 @@
   color: brown;
 }
 
+.pikachu {
+  margin: 35px;
+}
+
 .contenedor-error {
   display: flex;
   flex-direction: column;

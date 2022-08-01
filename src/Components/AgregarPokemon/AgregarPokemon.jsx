@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -40,9 +39,6 @@ function SignUp() {
   const [satk, setSatk] = useState("");
   const [sdef, setSdef] = useState("");
   const [spd, setSpd] = useState("");
-
-  let navegar = useNavigate();
-
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

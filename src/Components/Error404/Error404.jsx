@@ -9,7 +9,9 @@ function Error404() {
       <p>¡POKEMON NO ENCONTRADO!</p>
       <img className="pikachu" src={pikachuLlorando} alt="" />
       <Link to={"/pokemon"} style={{ textDecoration: "none" }}>
-        <button className="botonVolver">Volver a página principal</button>
+        <button className="botonVolver">
+          <b>Volver a página principal</b>
+        </button>
       </Link>
     </div>
   );

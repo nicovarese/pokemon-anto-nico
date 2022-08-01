@@ -56,7 +56,6 @@ function PaginaPpal() {
           className="inputLogin"
           type="text"
           name="user"
-          //   value={usuario}
           placeholder="Ingresar usuario"
           onChange={ingresoNombre}
         />
