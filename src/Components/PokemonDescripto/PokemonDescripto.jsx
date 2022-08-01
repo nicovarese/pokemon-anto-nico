@@ -13,7 +13,6 @@ function PokemonDescripto() {
   let navegar = useNavigate();
   const [pokemon, setPokemon] = useState({});
   useEffect(() => {
-    ///////// mostrar Pokemon seleccionado
     const pokemonEncontrado = async () => {
       const token = localStorage.getItem("token");
       try {
@@ -36,9 +35,6 @@ function PokemonDescripto() {
     pokemonEncontrado();
   }, [id]);
 
-  // const pokemonABorrar
-
-  // codigo para la barrita (importada de MUI)
   const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 15,
     borderRadius: 5,
@@ -53,7 +49,6 @@ function PokemonDescripto() {
     },
   }));
 
-  // linea 53 importamos imagenes de cada pokemon, de acuerdo al pokemon que necesitemos
   const imagen = pokemon.imagen;
 
   return (
@@ -70,8 +65,6 @@ function PokemonDescripto() {
             <h1 className="nombre-pokemon">{pokemon.nombre}</h1>
             <div className="numero-pokemon">{pokemon.numero}</div>
           </header>
-          {/*linea 71: hicimos que linkee al pokemon anterior al apretar flechita. linea 72: cuando llegaba al primer pokemon, que se esconda flechita*/}
-
           <div className="imagen-y-flecha">
             <div className="contenedor-flecha">
               {pokemon.prev && (
@@ -86,7 +79,6 @@ function PokemonDescripto() {
               )}
             </div>
             <img className="foto-pokemon" src={imagen} alt="" />
-            {/*linea 81: hicimos que linkee al siguiente pokemon al apretar flechita. linea 82: cuando llegaba al ultimo pokemon, que se esconda flechita*/}
             <div className="contenedor-flecha">
               {pokemon.next && (
                 <Link

@@ -2,7 +2,6 @@ import React from "react";
 import Pokemon from "../Components/Pokemon/Pokemon";
 import pokeball from "../Materiales/Pokeball.png";
 import "./lista-pokemon.css";
-import arrow from "../Materiales/Arrow.svg";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { grey } from "@mui/material/colors";
@@ -10,7 +9,6 @@ import imgAgregar from "../Materiales/Pokeball.png";
 import imgIniciarSesion from "../Materiales/usuario.png";
 
 function ListaPokemon() {
-  ///////// mostrar lista de Pokemones
   const [listaPokemon, setListaPokemon] = useState([]);
   const [lista, setLista] = useState([]);
   useEffect(() => {
@@ -42,11 +40,6 @@ function ListaPokemon() {
     }
   };
 
-  //esta funcion, la creamos para buscar los pokemon en el input search.
-  //puntos a tener en cuenta:
-  // 1) includes: "que incluya lo que va dentro del paréntesis"
-  // 2) toLowerCase: pasar todo a minúscula
-  // 3) setListaPokemon en la linea 23 es para que cambie el estado cada vez que usamos la función, si no, no va a cambiar nada.
   const buscarPokemon = (ev) => {
     let resultadoFiltrado = lista.filter((pokemon) => {
       return pokemon.nombre
@@ -56,7 +49,6 @@ function ListaPokemon() {
     setListaPokemon(resultadoFiltrado);
   };
 
-  //este useState, lo usamos para hacer una especie de toggle (botoncito on/off)
   const [ordenarPorNumero, setOrdenarPorNumero] = useState(false);
 
   const ordenarListaPokemon = () => {
@@ -72,7 +64,6 @@ function ListaPokemon() {
     }
   };
 
-  //linea 60: usamos MAP para cambiar la forma de cada elemento de la lista, y le pasamos a los elementos el componente Pokemon con sus props.
   return (
     <>
       <div className="contenedor">

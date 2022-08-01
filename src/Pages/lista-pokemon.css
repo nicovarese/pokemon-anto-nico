@@ -13,8 +13,6 @@
   align-items: center;
   background-image: url("../Materiales/fondo-lista-mosaico.png");
   background-size: cover;
-  /* background-repeat: no-repeat;
-  background-position: 10px 10px; */
 }
 
 .filtro {
