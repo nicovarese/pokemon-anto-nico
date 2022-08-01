@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PaginaPpal from "./Components/Página-Principal/PaginaPpal";
 import SignUp from "./Components/SignUp/SignUp";
 import AgregarPokemon from "./Components/AgregarPokemon/AgregarPokemon";
+import Error404 from "./Components/Error404/Error404";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     ///y el elemento sería la página que trabajamos como componente, con su/sus props(propiedades correspondientes)
     <BrowserRouter>
       <Routes>
+        <Route path="404-not-found" element={<Error404 />} />
         <Route path="/agregar-pokemon" element={<AgregarPokemon />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/" element={<PaginaPpal />} />

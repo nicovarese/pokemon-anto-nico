@@ -90,3 +90,12 @@ label {
   justify-content: flex-start;
   width: 350px;
 }
+
+.compartir-pokemon {
+  font-size: 12px;
+}
+
+.boton-modal {
+  margin: 2px;
+  font-size: 12px;
+}

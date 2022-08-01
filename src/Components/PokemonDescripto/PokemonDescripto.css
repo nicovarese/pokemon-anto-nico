@@ -1,6 +1,6 @@
 .contenedor-pokemon {
   width: 360px;
-  height: 640px;
+  height: 844px;
   background: #f57d31;
   border-radius: 24px;
   border: 12px solid white;
@@ -47,7 +47,7 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 17px;
   line-height: 32px;
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@
   justify-content: space-around;
   align-items: center;
   position: absolute;
-  margin-top: 87px;
+  margin-top: 100px;
   z-index: 3;
 }
 .material-symbols-outlined {
@@ -86,12 +86,13 @@
   left: 112.62px;
   top: 239.83px;
   z-index: 3;
+  margin-top: 80px;
 }
 
 .informacion-pokemon {
-  margin-top: 200px;
+  margin-top: 220px;
   width: 352px;
-  height: 412px;
+  height: 570px;
   background: #ffffff;
   border-radius: 8px;
   margin-bottom: 5px;
@@ -119,7 +120,6 @@
   width: 312px;
   height: 20px;
   justify-content: center;
-  margin-top: 35px;
 }
 
 .categoria {
@@ -327,10 +327,11 @@
   align-items: center;
   gap: 10px;
   font-size: 10px;
+  margin-top: 10px;
 }
 
 .p-lista {
-  margin: 0px;
+  margin-top: 8px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
@@ -356,6 +357,7 @@ li {
 }
 
 .nombres {
+  margin: 10px 0px 5px 0px;
   padding: 0px 10px 0px 0px;
   text-align: end;
   margin-right: 10px;

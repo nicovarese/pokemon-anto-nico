@@ -1,9 +1,24 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./AgregarPokemon.css";
-
 import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import { useNavigate } from "react-router-dom";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 300,
+  bgcolor: "background.paper",
+  border: "1px solid #000",
+  boxShadow: 24,
+  p: 4,
+  textAlign: "center",
+};
 
 function SignUp() {
   const [nombre, setNombre] = useState("");
@@ -25,8 +40,13 @@ function SignUp() {
   const [satk, setSatk] = useState("");
   const [sdef, setSdef] = useState("");
   const [spd, setSpd] = useState("");
+  const [id, setId] = useState("");
 
   let navegar = useNavigate();
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const ingresoNombre = (ev) => {
     setNombre(ev.target.value);
@@ -132,11 +152,11 @@ function SignUp() {
         }),
         headers: { "Content-Type": "application/json" },
       });
-
+      const jsonResponse = await response.json();
+      handleOpen();
       if (!response.ok) {
         throw new Error("Datos ingresados incorrectamente");
       }
-      navegar("/pokemon");
     } catch (error) {
       console.log("no se pudo conectar con el back end");
     }
@@ -322,6 +342,32 @@ function SignUp() {
       <button className="botonAgregar" onClick={agregarPokemonNuevo}>
         Agregar
       </button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" component="h2">
+            <b>¡POKEMON AGREGADO CON ÉXITO!</b>
+          </Typography>
+          <p className="compartir-pokemon">
+            <b> Compartí tu pokemon: </b>
+            <a
+              href={`/descripcion-pokemon/${numero}`}
+            >{`http://localhost:3000/descripcion-pokemon/${numero}`}</a>
+          </p>
+          <Link to="/pokemon">
+            <button className="boton-modal">Ir a página principal</button>
+          </Link>
+          <span>
+            <a href="agregar-pokemon">
+              <button className="boton-modal">Agregar otro pokemon</button>
+            </a>
+          </span>
+        </Box>
+      </Modal>
     </div>
   );
 }

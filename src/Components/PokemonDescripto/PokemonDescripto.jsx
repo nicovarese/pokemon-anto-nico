@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./PokemonDescripto.css";
 import height from "../../Materiales/Height.svg";
 import weight from "../../Materiales/Weight.svg";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
@@ -10,26 +10,27 @@ import { styled } from "@mui/material/styles";
 
 function PokemonDescripto() {
   const { id } = useParams();
-
+  let navegar = useNavigate();
   const [pokemon, setPokemon] = useState({});
   useEffect(() => {
     ///////// mostrar Pokemon seleccionado
     const pokemonEncontrado = async () => {
       const token = localStorage.getItem("token");
       try {
-        const repuesta = await fetch(`http://localhost:1234/pokemon/${id}`, {
+        const respuesta = await fetch(`http://localhost:1234/pokemon/${id}`, {
           headers: { "auth-token": token },
         });
 
-        if (!repuesta.ok) {
+        if (!respuesta.ok) {
           throw new Error("Error en el servidor");
         }
 
-        const pokemonesFetch = await repuesta.json();
+        const pokemonesFetch = await respuesta.json();
 
         setPokemon(pokemonesFetch);
       } catch (error) {
         console.log("No se pudo conectar con el backend");
+        navegar("/404-not-found");
       }
     };
     pokemonEncontrado();
@@ -39,7 +40,7 @@ function PokemonDescripto() {
 
   // codigo para la barrita (importada de MUI)
   const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-    height: 10,
+    height: 15,
     borderRadius: 5,
     [`&.${linearProgressClasses.colorPrimary}`]: {
       backgroundColor:

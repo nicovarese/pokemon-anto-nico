@@ -8,7 +8,7 @@ function Pokemon({ pokemon, cargarPokemones }) {
   const borrarPokemon = async () => {
     try {
       const respuesta = await fetch(
-        `http://localhost:1234/eliminar/pokemon/${pokemon.id}`,
+        `http://localhost:1234/eliminar/pokemon/${pokemon.numero}`,
         { method: "DELETE", headers: { "auth-token": token } }
       );
       cargarPokemones();
@@ -34,7 +34,7 @@ function Pokemon({ pokemon, cargarPokemones }) {
       >
         x
       </div>
-      <Link className="link" to={`/descripcion-pokemon/${pokemon.id}`}>
+      <Link className="link" to={`/descripcion-pokemon/${pokemon.numero}`}>
         <div
           id={pokemon.numero}
           className="item"
