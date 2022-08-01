@@ -189,7 +189,7 @@ function PokemonDescripto() {
                   <BorderLinearProgress
                     className="barra"
                     variant="determinate"
-                    value={pokemon.basestats.hp}
+                    value={pokemon.basestats.hp / 2}
                   />
                 </li>
                 <li className="item-lista-stats">
@@ -197,7 +197,7 @@ function PokemonDescripto() {
                   <BorderLinearProgress
                     className="barra"
                     variant="determinate"
-                    value={pokemon.basestats.atk}
+                    value={pokemon.basestats.atk / 2}
                   />
                 </li>
                 <li className="item-lista-stats">
@@ -205,7 +205,7 @@ function PokemonDescripto() {
                   <BorderLinearProgress
                     className="barra"
                     variant="determinate"
-                    value={pokemon.basestats.def}
+                    value={pokemon.basestats.def / 2}
                   />
                 </li>
                 <li className="item-lista-stats">
@@ -213,7 +213,7 @@ function PokemonDescripto() {
                   <BorderLinearProgress
                     className="barra"
                     variant="determinate"
-                    value={pokemon.basestats.satk}
+                    value={pokemon.basestats.satk / 2}
                   />
                 </li>
                 <li className="item-lista-stats">
@@ -221,7 +221,7 @@ function PokemonDescripto() {
                   <BorderLinearProgress
                     className="barra"
                     variant="determinate"
-                    value={pokemon.basestats.sdef}
+                    value={pokemon.basestats.sdef / 2}
                   />
                 </li>
                 <li className="item-lista-stats">
@@ -229,7 +229,7 @@ function PokemonDescripto() {
                   <BorderLinearProgress
                     className="barra"
                     variant="determinate"
-                    value={pokemon.basestats.spd}
+                    value={pokemon.basestats.spd / 2}
                   />
                 </li>
               </ul>

@@ -60,14 +60,16 @@ function ListaPokemon() {
   const [ordenarPorNumero, setOrdenarPorNumero] = useState(false);
 
   const ordenarListaPokemon = () => {
-    let listaOrdenadaPorNumero = [...listaPokemon].sort((a, b) =>
-      ordenarPorNumero
-        ? a.numero.toString().localeCompare(b.numero.toString())
-        : a.nombre.localeCompare(b.nombre)
-    );
-    setListaPokemon(listaOrdenadaPorNumero);
-    setOrdenarPorNumero(!ordenarPorNumero);
-    console.log(listaOrdenadaPorNumero);
+    if (ordenarPorNumero) {
+      setListaPokemon(lista);
+      setOrdenarPorNumero(!ordenarPorNumero);
+    } else {
+      let listaOrdenadaPorNumero = [...listaPokemon].sort((a, b) =>
+        a.nombre.localeCompare(b.nombre)
+      );
+      setListaPokemon(listaOrdenadaPorNumero);
+      setOrdenarPorNumero(!ordenarPorNumero);
+    }
   };
 
   //linea 60: usamos MAP para cambiar la forma de cada elemento de la lista, y le pasamos a los elementos el componente Pokemon con sus props.
@@ -90,7 +92,6 @@ function ListaPokemon() {
           </Link>
           <div className="filtro" onClick={ordenarListaPokemon}>
             <span>{!ordenarPorNumero ? "🔢" : "🔠"}</span>
-            <img className="flechita" src={arrow} alt="" />
           </div>
         </header>
         <input

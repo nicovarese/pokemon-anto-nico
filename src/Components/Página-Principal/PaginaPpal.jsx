@@ -3,11 +3,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PaginaPpal.css";
 import { Link } from "react-router-dom";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 
 function PaginaPpal() {
   const navegar = useNavigate();
   const [nombre, setNombre] = useState([]);
   const [password, setPassword] = useState([]);
+  const [nuevoError, setNuevoError] = useState(false);
 
   const verify = async () => {
     try {
@@ -16,7 +19,6 @@ function PaginaPpal() {
         body: JSON.stringify({ nombre, password }),
         headers: { "Content-Type": "application/json" },
       });
-
       if (!response.ok) {
         throw new Error("Datos ingresados incorrectamente");
       }
@@ -26,6 +28,7 @@ function PaginaPpal() {
       console.log(fetchResponse);
     } catch (error) {
       console.log(error);
+      setNuevoError(true);
     }
   };
 
@@ -71,7 +74,11 @@ function PaginaPpal() {
       <button className="btn btn1" onClick={verify}>
         Ingresar
       </button>
-
+      {nuevoError && (
+        <Stack sx={{ width: "100%" }} spacing={2}>
+          <Alert severity="error">Usuario y/o contraseña no válido</Alert>
+        </Stack>
+      )}
       <p style={{ display: token ? "none" : "block" }} className="pRegistro">
         No tienes usuario?
       </p>

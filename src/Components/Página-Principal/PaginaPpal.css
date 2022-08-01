@@ -12,6 +12,7 @@
   transition: all 1000ms ease;
   box-shadow: 5px 5px 15px rgb(202, 154, 128);
   margin-top: 10px;
+  margin-bottom: 15px;
   z-index: 0;
   font-weight: 700;
   cursor: pointer;

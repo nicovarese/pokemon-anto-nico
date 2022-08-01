@@ -1,9 +1,16 @@
 import React from "react";
+import "./Error404.css";
+import pikachuLlorando from "../../Materiales/angry-pikachu.gif";
+import { Link } from "react-router-dom";
 
 function Error404() {
   return (
-    <div>
-      <h2 className="error404">Pokemon no encontrado</h2>
+    <div className="contenedor-error">
+      <p>¡POKEMON NO ENCONTRADO!</p>
+      <img className="pikachu" src={pikachuLlorando} alt="" />
+      <Link to={"/pokemon"} style={{ textDecoration: "none" }}>
+        <button className="botonVolver">Volver a página principal</button>
+      </Link>
     </div>
   );
 }

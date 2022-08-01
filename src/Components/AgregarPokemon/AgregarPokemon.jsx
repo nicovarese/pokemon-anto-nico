@@ -40,7 +40,6 @@ function SignUp() {
   const [satk, setSatk] = useState("");
   const [sdef, setSdef] = useState("");
   const [spd, setSpd] = useState("");
-  const [id, setId] = useState("");
 
   let navegar = useNavigate();
 
@@ -124,7 +123,10 @@ function SignUp() {
     setSpd(ev.target.value);
   };
 
-  const agregarPokemonNuevo = async () => {
+  const token = localStorage.getItem("token");
+
+  const agregarPokemonNuevo = async (e) => {
+    e.preventDefault();
     try {
       const response = await fetch("http://localhost:1234/agregar-pokemon", {
         method: "POST",
@@ -150,7 +152,7 @@ function SignUp() {
             spd,
           },
         }),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "auth-token": token },
       });
       const jsonResponse = await response.json();
       handleOpen();
@@ -164,184 +166,199 @@ function SignUp() {
 
   return (
     <div className="formularioAgregarPokemon">
-      {/* <h1 className="tituloAgregarPokemon">Agregar Pokemon</h1> */}
       <Link className="link" to="/pokemon">
         <span className="material-icons arrowBack">arrow_back</span>
       </Link>
-      <label htmlFor="user">
-        Ingrese nombre del pókemon:
-        <input
-          onChange={ingresoNombre}
-          type="text"
-          name="user"
-          placeholder="Ingresar nombre"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese numero del pókemon:
-        <input
-          onChange={ingresoNumero}
-          type="text"
-          name="user"
-          placeholder="Ingresar número"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese URL de la imagen del pokemon:
-        <input
-          onChange={ingresoImagen}
-          type="text"
-          name="user"
-          placeholder="Ingresar imagen"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese la primer categoria del Pókemon:
-        <input
-          onChange={ingresoCategoria1}
-          type="text"
-          name="user"
-          placeholder="Ingresar categoría"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese la segunda categoría del Pókemon:
-        <input
-          onChange={ingresoCategoria2}
-          type="text"
-          name="user"
-          placeholder="Ingresar categoría"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese el color de la primer categoría:
-        <input
-          onChange={ingresoColorCategoria1}
-          type="text"
-          name="user"
-          placeholder="Ingresar color"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese el color de la segunda categoría:
-        <input
-          onChange={ingresoColorCategoria2}
-          type="text"
-          name="user"
-          placeholder="Ingresar color"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese su weight:
-        <input
-          onChange={ingresoWeight}
-          type="text"
-          name="user"
-          placeholder="Ingresar peso"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese su height:
-        <input
-          onChange={ingresoHeight}
-          type="text"
-          name="user"
-          placeholder="Ingresar altura"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese el primer movimiento:
-        <input
-          onChange={ingresoMoves1}
-          type="text"
-          name="user"
-          placeholder="Ingresar movimiento"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese el segundo movimiento:
-        <input
-          onChange={ingresoMoves2}
-          type="text"
-          name="user"
-          placeholder="Ingresar movimiento"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese color del pókemon:
-        <input
-          onChange={ingresoColor}
-          type="text"
-          name="user"
-          placeholder="Ingresar color Pokemon"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese descripción del pókemon:
-        <input
-          onChange={ingresoDescripcion}
-          type="text"
-          name="user"
-          placeholder="Ingresar descripción"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese su hp:
-        <input
-          onChange={ingresoHp}
-          type="text"
-          name="user"
-          placeholder="Ingresar HP"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese su atk:
-        <input
-          onChange={ingresoAtk}
-          type="text"
-          name="user"
-          placeholder="Ingresar ATK"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese su def:
-        <input
-          onChange={ingresoDef}
-          type="text"
-          name="user"
-          placeholder="Ingresar DEF"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese su satk:
-        <input
-          onChange={ingresoSatk}
-          type="text"
-          name="user"
-          placeholder="Ingresar SATK"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese su sdef:
-        <input
-          onChange={ingresoSdef}
-          type="text"
-          name="user"
-          placeholder="Ingresar SDEF"
-        />
-      </label>
-      <label htmlFor="user">
-        Ingrese su spd:
-        <input
-          onChange={ingresoSpd}
-          type="text"
-          name="user"
-          placeholder="Ingresar SPD"
-        />
-      </label>
-      <button className="botonAgregar" onClick={agregarPokemonNuevo}>
-        Agregar
-      </button>
+      <form action="" className="form" onSubmit={agregarPokemonNuevo}>
+        <label htmlFor="user">
+          Ingrese nombre del pókemon:
+          <input
+            onChange={ingresoNombre}
+            type="text"
+            name="user"
+            placeholder="Ingresar nombre"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese numero del pókemon:
+          <input
+            onChange={ingresoNumero}
+            type="text"
+            name="user"
+            placeholder="Ingresar número"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese URL de la imagen del pokemon:
+          <input
+            onChange={ingresoImagen}
+            type="text"
+            name="user"
+            placeholder="Ingresar imagen"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese la primer categoria del Pókemon:
+          <input
+            onChange={ingresoCategoria1}
+            type="text"
+            name="user"
+            placeholder="Ingresar categoría"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese la segunda categoría del Pókemon:
+          <input
+            onChange={ingresoCategoria2}
+            type="text"
+            name="user"
+            placeholder="Ingresar categoría"
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese el color de la primer categoría:
+          <input
+            onChange={ingresoColorCategoria1}
+            type="text"
+            name="user"
+            placeholder="Ingresar color"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese el color de la segunda categoría:
+          <input
+            onChange={ingresoColorCategoria2}
+            type="text"
+            name="user"
+            placeholder="Ingresar color"
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese su weight:
+          <input
+            onChange={ingresoWeight}
+            type="text"
+            name="user"
+            placeholder="Ingresar peso"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese su height:
+          <input
+            onChange={ingresoHeight}
+            type="text"
+            name="user"
+            placeholder="Ingresar altura"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese el primer movimiento:
+          <input
+            onChange={ingresoMoves1}
+            type="text"
+            name="user"
+            placeholder="Ingresar movimiento"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese el segundo movimiento:
+          <input
+            onChange={ingresoMoves2}
+            type="text"
+            name="user"
+            placeholder="Ingresar movimiento"
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese color del pókemon:
+          <input
+            onChange={ingresoColor}
+            type="text"
+            name="user"
+            placeholder="Ingresar color Pokemon"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese descripción del pókemon:
+          <input
+            onChange={ingresoDescripcion}
+            type="text"
+            name="user"
+            placeholder="Ingresar descripción"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese su hp:
+          <input
+            onChange={ingresoHp}
+            type="text"
+            name="user"
+            placeholder="Ingresar HP"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese su atk:
+          <input
+            onChange={ingresoAtk}
+            type="text"
+            name="user"
+            placeholder="Ingresar ATK"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese su def:
+          <input
+            onChange={ingresoDef}
+            type="text"
+            name="user"
+            placeholder="Ingresar DEF"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese su satk:
+          <input
+            onChange={ingresoSatk}
+            type="text"
+            name="user"
+            placeholder="Ingresar SATK"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese su sdef:
+          <input
+            onChange={ingresoSdef}
+            type="text"
+            name="user"
+            placeholder="Ingresar SDEF"
+            required
+          />
+        </label>
+        <label htmlFor="user">
+          Ingrese su spd:
+          <input
+            onChange={ingresoSpd}
+            type="text"
+            name="user"
+            placeholder="Ingresar SPD"
+            required
+          />
+        </label>
+        <button className="botonAgregar">Agregar</button>
+      </form>
       <Modal
         open={open}
         onClose={handleClose}
