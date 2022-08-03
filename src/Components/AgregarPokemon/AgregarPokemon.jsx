@@ -151,10 +151,13 @@ function SignUp() {
         headers: { "Content-Type": "application/json", "auth-token": token },
       });
       const jsonResponse = await response.json();
+      console.log(jsonResponse);
       handleOpen();
       if (!response.ok) {
         throw new Error("Datos ingresados incorrectamente");
       }
+      const fetchResponse = await response.json();
+      console.log(fetchResponse);
     } catch (error) {
       console.log("no se pudo conectar con el back end");
     }
@@ -180,10 +183,11 @@ function SignUp() {
           Ingrese numero del pókemon:
           <input
             onChange={ingresoNumero}
-            type="text"
+            type="number"
             name="user"
             placeholder="Ingresar número"
             required
+            min={1}
           />
         </label>
         <label htmlFor="user">
@@ -297,60 +301,72 @@ function SignUp() {
           Ingrese su hp:
           <input
             onChange={ingresoHp}
-            type="text"
+            type="number"
             name="user"
             placeholder="Ingresar HP"
             required
+            min={1}
+            max={200}
           />
         </label>
         <label htmlFor="user">
           Ingrese su atk:
           <input
             onChange={ingresoAtk}
-            type="text"
+            type="number"
             name="user"
             placeholder="Ingresar ATK"
             required
+            min={1}
+            max={200}
           />
         </label>
         <label htmlFor="user">
           Ingrese su def:
           <input
             onChange={ingresoDef}
-            type="text"
+            type="number"
             name="user"
             placeholder="Ingresar DEF"
             required
+            min={1}
+            max={200}
           />
         </label>
         <label htmlFor="user">
           Ingrese su satk:
           <input
             onChange={ingresoSatk}
-            type="text"
+            type="number"
             name="user"
             placeholder="Ingresar SATK"
             required
+            min={1}
+            max={200}
           />
         </label>
         <label htmlFor="user">
           Ingrese su sdef:
           <input
             onChange={ingresoSdef}
-            type="text"
+            type="number"
             name="user"
             placeholder="Ingresar SDEF"
             required
+            min={1}
+            max={200}
           />
         </label>
         <label htmlFor="user">
           Ingrese su spd:
           <input
             onChange={ingresoSpd}
-            type="text"
+            type="number"
             name="user"
             placeholder="Ingresar SPD"
             required
+            min={1}
+            max={200}
           />
         </label>
         <button className="botonAgregar">Agregar</button>

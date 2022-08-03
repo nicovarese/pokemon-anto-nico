@@ -16,6 +16,7 @@ function Pokemon({ pokemon, cargarPokemones }) {
         throw new Error("Error en el servidor");
       }
       const pokemonFetch = await respuesta.json();
+      console.log(pokemonFetch);
     } catch (error) {
       console.log("No se pudo conectar con el back end");
     }
