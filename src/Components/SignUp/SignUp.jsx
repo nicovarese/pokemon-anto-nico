@@ -48,12 +48,10 @@ function SignUp() {
         body: JSON.stringify({ nombre, password, mail }),
         headers: { "Content-Type": "application/json" },
       });
-      handleOpen();
       if (!response.ok) {
         throw new Error("El nombre de usuario ya existe");
       }
-      const fetchResponse = await response.json();
-      console.log(fetchResponse);
+      handleOpen();
     } catch (error) {
       console.log(error);
       setNuevoError(true);
@@ -75,6 +73,7 @@ function SignUp() {
             type="text"
             name="user"
             placeholder="Ingresar usuario"
+            required
           />
         </label>
         {nuevoError && (
@@ -91,6 +90,7 @@ function SignUp() {
             name="psw"
             placeholder="Ingresar contraseña"
             minLength={8}
+            required
           />
         </label>
         <label className="labelSignUp" htmlFor="user">
@@ -101,6 +101,7 @@ function SignUp() {
             type="email"
             name="user"
             placeholder="Ingresar e-mail"
+            required
           />
         </label>
         <button className="botonRegistrarse">Registrarse</button>
